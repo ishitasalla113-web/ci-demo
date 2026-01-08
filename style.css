@@ -1,0 +1,581 @@
+/* ---------- YOUR EXISTING CSS (UNCHANGED) ---------- */
+/* ---------- GLOBAL ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #f4f4f4;
+  color: #222;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ---------- HEADER ---------- */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #1f1f1f;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 9999;
+}
+
+.nav-left a {
+  text-decoration: none;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-item,
+.dropbtn {
+  color: white;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.nav-item:hover,
+.dropbtn:hover {
+  color: #ff6600;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #2c2c2c;
+  min-width: 140px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  top: 35px;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 10px 14px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+  background-color: #ff6600;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Right side buttons */
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.login-btn,
+.signup-btn {
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-btn:hover,
+.signup-btn:hover {
+  background-color: #e65c00;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  background-color: #2c2c2c;
+  color: white;
+  text-align: center;
+  padding: 120px 20px 100px;
+  margin-top: 70px;
+}
+
+.hero-content h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.get-started {
+  background-color: #ff652f;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+/* ---------- SECTIONS ---------- */
+section {
+  padding: 60px 80px;
+  background-color: #fff;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.8s ease-out;
+}
+
+section.reveal-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+section h2 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+section p {
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* ---------- CARDS ---------- */
+.features,
+.course-list,
+.instructor-list,
+.testimonial-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.feature-card,
+.course-card,
+.instructor,
+.testimonial {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex: 1 1 30%;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.feature-card:hover,
+.course-card:hover,
+.instructor:hover,
+.testimonial:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ---------- SCROLL PROGRESS ---------- */
+#scrollProgress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #ff652f, #ffb84d);
+  width: 0;
+  z-index: 9999;
+  transition: width 0.25s ease-out;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .features,
+  .course-list,
+  .instructor-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-card,
+  .course-card,
+  .instructor
+  {
+  width: 90%;
+}
+}
+
+.course-intro,
+.topics {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+  margin: 0 10px;
+  color: #007BFF;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Dropdown fix */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 160px;
+  background-color: #2c2c2c;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+}
+
+.dropdown-content li a {
+  display: block;
+  padding: 10px 15px;
+  color: white;
+  text-decoration: none;
+}
+
+.dropdown-content li a:hover {
+  background-color: #ff6600;
+}
+
+/* Keep dropdown visible while hovering */
+.dropdown:hover .dropdown-content,
+.dropdown-content:hover {
+  display: block;
+  opacity: 1;
+}
+
+
+
+/* ---------- LAYOUT ---------- */
+.course-container {
+  display: flex;
+  width: 100%;
+}
+
+/* ---------- SIDEBAR ---------- */
+.sidebar {
+  width: 250px;
+  background: #1f1f1f;
+  color: white;
+  padding: 20px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+}
+
+.sidebar h2 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  margin: 10px 0;
+}
+
+.sidebar ul li a {
+  color: #bbb;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+  background-color: #ff6600;
+  color: white;
+}
+
+/* ---------- MAIN CONTENT ---------- */
+.course-content {
+  margin-left: 270px;
+  padding: 20px;
+  overflow-y: auto;
+
+  flex: 1;
+}
+
+.course-content section {
+  margin: 40px;
+  scroll-margin-top: 100px;
+}
+
+.course-content h2 {
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.course-content p,
+ul {
+  color: #444;
+  line-height: 1.6;
+}
+
+pre {
+  background: #f4f4f4;
+  padding: 12px;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+/* ---------- QUIZ ---------- */
+.quiz {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.quiz button {
+  margin-top: 15px;
+  background-color: #ff6600;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.quiz button:hover {
+  background-color: #e65c00;
+}
+
+#quizResult {
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.size {
+  font-size: medium;
+  font-weight: bold;
+}
+/* ---------- AUTH PAGES ---------- */
+.auth-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #4a90e2, #9013fe);
+}
+
+.auth-container {
+  background: #fff;
+  padding: 2rem 3rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  width: 400px;
+  text-align: center;
+}
+
+.auth-container h2 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-form label {
+  text-align: left;
+  margin-top: 0.8rem;
+  font-weight: 600;
+}
+
+.auth-form input {
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-top: 0.3rem;
+}
+
+.btn {
+  margin-top: 1.5rem;
+  padding: 0.8rem;
+  border: none;
+  background: #4a90e2;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #357ABD;
+}
+
+.switch-link {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.switch-link a {
+  color: #4a90e2;
+  text-decoration: none;
+}
+
+.switch-link a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- FIX LOGIN CENTERING ---------- */
+.auth-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 80px); /* full screen minus navbar */
+  margin-top: 80px; /* pushes below the navbar */
+  background: linear-gradient(135deg, #4a90e2, #9013fe);
+}
+/* ---------- FOOTER ---------- */
+footer {
+  background-color: #111;
+  color: #f4f4f4;
+  text-align: center;
+  padding: 25px 10px;
+  margin-top: 60px;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+}
+
+footer p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+footer a {
+  color: #00aaff;
+  text-decoration: none;
+  margin: 0 5px;
+  transition: 0.3s ease;
+}
+
+footer a:hover {
+  color: #66d9ff;
+  text-decoration: underline;
+}
+.footer-social {
+  margin-top: 15px;
+}
+
+.footer-social a {
+  display: inline-block;
+  margin: 0 10px;
+  color: #ddd;
+  font-size: 18px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: #00aaff;
+  transform: scale(1.2);
+}
+/* ---------- START COURSE SECTION ---------- */
+.start-course-section {
+  text-align: center;
+  background: linear-gradient(135deg, #004aad, #007bff);
+  color: #fff;
+  padding: 60px 20px;
+  border-radius: 0 0 30px 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.start-course-section h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.start-course-section p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
+.start-course-btn {
+  display: inline-block;
+  text-decoration: none;
+  background: #fff;
+  color: #004aad;
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.start-course-btn:hover {
+  background: #f1f1f1;
+  transform: scale(1.05);
+}
+
+.arrow-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.arrow-btn:hover {
+  background-color: #0056b3;
+  transform: translateX(5px); /* Slight move on hover for arrow effect */
+}
